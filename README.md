@@ -11,7 +11,7 @@ It is safe to add to an existing world. No pre-built loaders will be modified.
 
 No runtime scripting! (Apart from that of AAI Loaders itself for lubricant mechanics.)
 
-Requires Space Age DLC license for stacking / stacking + lane-filtering loaders.
+Requires Space Age DLC license for stacking / stacking + lane-filtering loaders. Lane-filtering-only loaders can still be used without the DLC.
 
 ## Configuration
 
@@ -24,8 +24,8 @@ Requires Space Age DLC license for stacking / stacking + lane-filtering loaders.
 - In lieu of Space Age, any mod that provides Stack Inserter may be used to enable stacking loaders.
   - Technology and item prototype names must match Space Age to be detected.
   - Mods adding these may need to be listed as dependencies here before they function properly.
-    - One such mod is already listed as an optional dependency.
 - When a mod adding Lane Balancers/Splitters is enabled, those items will (by default) be used instead of splitters in recipes and icons.
+- Compatible mods are listed as optional dependencies
 
 ## Help Wanted / Known Issues
 

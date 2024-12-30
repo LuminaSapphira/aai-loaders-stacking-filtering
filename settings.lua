@@ -35,3 +35,14 @@ data:extend {
         order = "z",
     },
 }
+
+local function dlc_disable(name)
+    local setting = data.raw["bool-setting"]["aai-loaders-stacking-filtering-" .. name]
+    setting.forced_value = false
+    setting.hidden = true
+end
+
+if not feature_flags["space_travel"] then
+    dlc_disable("enable-stacking")
+    dlc_disable("enable-stacking-lane-filtering")
+end

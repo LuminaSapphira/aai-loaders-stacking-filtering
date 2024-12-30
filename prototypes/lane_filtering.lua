@@ -2,6 +2,10 @@ local Utils = require("./base")
 
 local LaneFiltering = {}
 
+local mod_integration_setting = settings.startup["aai-loaders-stacking-filtering-lane-splitter-integration"].value
+local has_compatible_mod = (mods["lane-splitters"] and true or false) or (mods["lane-balancers"] and true or false)
+local use_mod_integration = has_compatible_mod and mod_integration_setting
+
 function LaneFiltering.get_splitter_item_name(loader_name)
     -- "aai-express-loader" -> "express"
     -- "aai-loader" -> ""
@@ -13,7 +17,7 @@ function LaneFiltering.get_splitter_item_name(loader_name)
         tier = tier .. "-"
     end
 
-    if settings.startup["aai-loaders-stacking-filtering-lane-splitter-integration"].value and data.raw["item"][tier .. "lane-splitter"] then
+    if use_mod_integration and data.raw["item"][tier .. "lane-splitter"] then
         -- "" -> "lane-splitter"
         -- "express-" -> "express-lane-splitter"
         tier = tier .. "lane-splitter"
