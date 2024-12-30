@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2024-12-30
+  Graphics:
+    - Added stacking / filtering icons to entity icons (these are used in upgrade/rebuild indicators and in the Editor).
+      In-world sprites are still unaffected.
+  Info:
+    - Bumped base dependency to 2.0.17, since per-lane filtering wasn't added until then
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2024-12-30
   Bugfixes:
