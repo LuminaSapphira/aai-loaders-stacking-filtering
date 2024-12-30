@@ -33,7 +33,7 @@ function LaneFiltering.set_stats(entity)
     entity.per_lane_filters = true
 end
 
-function LaneFiltering.attach_splitter_icon(item, splitter_id)
+function LaneFiltering.attach_splitter_icon(item, splitter_id, entity)
     local icons = table.deepcopy(data.raw["item"][splitter_id].icons)
     if icons then
         for _, icondata in ipairs(icons) do
@@ -51,6 +51,7 @@ function LaneFiltering.attach_splitter_icon(item, splitter_id)
             shift = { -16, -16 }
         })
     end
+    entity.icons = table.deepcopy(item.icons)
 end
 
 function LaneFiltering.generate_recipe(item, orig_item_name, splitter_item_name)
@@ -87,7 +88,7 @@ function LaneFiltering.make_lane_filtering(entity, item, orig_item)
     local splitter_item_name = LaneFiltering.get_splitter_item_name(orig_item.name)
 
     item = duped_protos.item
-    LaneFiltering.attach_splitter_icon(item, splitter_item_name)
+    LaneFiltering.attach_splitter_icon(item, splitter_item_name, entity)
 
     local recipe = LaneFiltering.generate_recipe(item, orig_item.name, splitter_item_name)
 

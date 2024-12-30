@@ -11,10 +11,10 @@ local function make_stacking_lane_filtering(entity, item)
     item = duped_protos.item
 
     Stacking.set_stats(entity)
-    Stacking.attach_icon(item)
+    Stacking.attach_icon(item, entity)
     LaneFiltering.set_stats(entity)
     local splitter_item_name = LaneFiltering.get_splitter_item_name(orig_item.name)
-    LaneFiltering.attach_splitter_icon(item, splitter_item_name)
+    LaneFiltering.attach_splitter_icon(item, splitter_item_name, entity)
     local recipe = LaneFiltering.generate_recipe(item, orig_item.name .. "-stacking", splitter_item_name)
 
     local protos = { recipe }

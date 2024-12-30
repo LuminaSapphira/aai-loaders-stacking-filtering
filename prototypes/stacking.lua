@@ -2,13 +2,14 @@ local Utils = require("base")
 
 local Stacking = {}
 
-function Stacking.attach_icon(item)
+function Stacking.attach_icon(item, entity)
     table.insert(item.icons, {
         icon = data.raw["virtual-signal"]["signal-stack-size"].icon,
         icon_size = 64,
         scale = 0.5,
         shift = { -16, 16 }
     })
+    entity.icons = table.deepcopy(item.icons)
 end
 
 function Stacking.set_stats(entity)
@@ -62,7 +63,7 @@ function Stacking.make_stacking(entity, item, include_lane_filters_in_tech)
     item = duped_protos.item
 
     Stacking.set_stats(entity)
-    Stacking.attach_icon(item)
+    Stacking.attach_icon(item, entity)
 
     local recipe = Stacking.generate_recipe(item, orig_item.name)
 
