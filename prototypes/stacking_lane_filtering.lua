@@ -1,6 +1,6 @@
-local Utils = require("./base")
-local Stacking = require("./stacking")
-local LaneFiltering = require("./lane_filtering")
+local Utils = require("base")
+local Stacking = require("stacking")
+local LaneFiltering = require("lane_filtering")
 
 local function make_stacking_lane_filtering(entity, item)
     local orig_item = data.raw["item"][item.name]

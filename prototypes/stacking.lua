@@ -1,4 +1,4 @@
-local Utils = require("./base")
+local Utils = require("base")
 
 local Stacking = {}
 

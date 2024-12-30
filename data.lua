@@ -1,6 +1,6 @@
-local Stacking = require("./prototypes/stacking")
-local LaneFiltering = require("./prototypes/lane_filtering")
-local make_stacking_lane_filtering = require("./prototypes/stacking_lane_filtering")
+local Stacking = require("prototypes.stacking")
+local LaneFiltering = require("prototypes.lane_filtering")
+local make_stacking_lane_filtering = require("prototypes.stacking_lane_filtering")
 
 local function insert_all(ntable, sub)
     if not sub then return end
